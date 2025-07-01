@@ -261,6 +261,7 @@ header {
 
 button {
     display: flex;
+    user-select: none;
     width: fit-content;
     height: fit-content;
     justify-content: center;
@@ -285,6 +286,7 @@ button {
 
     & img {
         transition: filter .25s ease;
+        -webkit-user-drag: none;
     }
 
     &:hover {
