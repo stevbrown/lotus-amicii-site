@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -167,7 +166,6 @@ header {
     display: flex;
     flex-direction: column;
     max-width: 1920px;
-    // gap: 100px;
     justify-content: space-between;
     padding-top: 75px;
     padding-left: 220px;
@@ -227,7 +225,7 @@ header {
                 font-weight: 500;
                 font-size: 20px;
                 text-align: center;
-                color: #B6BEC4;
+                color: #D0D0D0;
             }
         }
 
@@ -246,18 +244,159 @@ header {
 .aboutus {
     display: flex;
     width: 100vw;
-    height: 600px;
-
+    height: fit-content;
+    justify-content: center;
     background-color: #101D17;
     
     & .container {
         display: flex;
         flex-direction: column;
         max-width: 1920px;
-        padding: 50px 220px;
+        padding: 100px 220px;
+        gap: 70px;
+
+        & .aboutus__title {
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            justify-content: center;
+    
+            & span {
+                font-family: 'Unbounded';
+                font-weight: 900;
+                font-size: 96px;
+                text-transform: uppercase;
+                text-align: center;
+                color: #61FC7D;
+            }
+        }
+
+        & .blocks {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 150px;
+            align-items: center;
+
+            & img {
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+
+            & span.header {
+                font-family: 'Raleway';
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 115%;
+                letter-spacing: -1px;
+                color: #EEF0F1;
+            }
+
+            & span.text,
+            & li.text {
+                font-family: 'Inter';
+                font-weight: 400;
+                font-size: 18px;
+                color: #D0D0D0;
+            }
+
+            & .block__long {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                gap: 45px;
+                
+                &.right {
+                    justify-content: flex-end;
+                    gap: 0px;
+
+                    .text {
+                        justify-content: flex-end;
+                        
+                        & span {
+                            text-align: right;
+                        }
+                    }
+                }
+
+                & img {
+                    width: 250px;
+                    height: 217px;
+                }
+
+                & .text {
+                    display: flex;
+                    flex-direction: column;
+                    width: 630px;
+                    gap: 15px;
+                }
+            }
+
+            & .wrapper {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+
+                & .block__short {
+                    display: flex;
+                    width: 600px;
+                    height: 201px;
+                    justify-content: center;
+
+                    & .text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+
+                    &.right .text {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+
+                        & span, li {
+                            text-align: right;
+                        }
+
+                        & ul {
+                            gap: 10px;
+                        }
+                    }
+                }
+            }
+
+            & .block__end {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+
+                & .text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 800px;
+                    gap: 15px;
+
+                    & span.title,
+                    & span.text {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        & button.learnMore img {
+            width: 18px;
+            aspect-ratio: 1/1;
+        }
     }
 }
 
+.statistic {
+    height: 600px;
+}
 
 button {
     display: flex;
