@@ -264,7 +264,7 @@ header {
             & span {
                 font-family: 'Unbounded';
                 font-weight: 900;
-                font-size: 96px;
+                font-size: 56px;
                 text-transform: uppercase;
                 text-align: center;
                 color: #61FC7D;
@@ -395,7 +395,28 @@ header {
 }
 
 .statistic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 600px;
+    gap: 70px;
+    padding: 100px 220px;
+
+    & .statistic__title {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        justify-content: center;
+
+        & span {
+            font-family: 'Unbounded';
+            font-weight: 900;
+            font-size: 56px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #61FC7D;
+        }
+    }
 }
 
 button {
