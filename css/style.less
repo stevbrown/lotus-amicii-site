@@ -15,7 +15,7 @@ body {
     background: linear-gradient(to bottom, #071d17 3%, #1c8d61 100%);
     background: -webkit-linear-gradient(to bottom, #071d17 3%, #1c8d61 100%);
     background: -moz-linear-gradient(to bottom, #071d17 3%, #1c8d61 100%);
-    height: 100vh;
+    background-size: 100vw 100vh;
     overflow-x: hidden;
 
     opacity: 0;
@@ -220,7 +220,7 @@ header {
                 color: #61FC7D;
             }
 
-            & span.text {
+            & span.undertext {
                 font-family: 'Inter';
                 font-weight: 500;
                 font-size: 20px;
@@ -394,13 +394,18 @@ header {
     }
 }
 
-.statistic {
+.statistica {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 600px;
+    justify-content: center;
+    width: 100vw;
     gap: 70px;
     padding: 100px 220px;
+
+    background: linear-gradient(to bottom, #071d17 3%, #1c8d61 100%);
+    background: -webkit-linear-gradient(to bottom, #071d17 3%, #1c8d61 100%);
+    background: -moz-linear-gradient(to bottom, #071d17 3%, #1c8d61 100%);
+
 
     & .statistic__title {
         display: flex;
@@ -415,6 +420,86 @@ header {
             text-transform: uppercase;
             text-align: center;
             color: #61FC7D;
+        }
+    }
+
+    & .reviews {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0px;
+        gap: 25px;
+
+        & .review {
+            position: relative;
+            display: flex;
+            padding: 15px 25px;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 4%);
+            gap: 25px;
+
+            user-select: none;
+            -webkit-user-drag: none;
+
+            transition: background .25s ease;
+
+            &:hover {
+                background: rgba(255, 255, 255, 6%);
+            }
+
+            & img {
+                width: 128px;
+                height: 128px;
+                border-radius: 16px;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            & .wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+
+                & .review__name {
+                    font-family: 'Inter';
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: #EEF0F1;
+                }
+
+                & .review__text {
+                    width: 190px;
+                    opacity: 0;
+                    height: 0;
+                    max-height: 360px;
+                    overflow: hidden;
+                    padding: 0;
+                    margin: 0;
+                    transition: 
+                    opacity 1s ease,
+                    padding 1s ease,
+                    width 1.25s ease;
+                    font-family: 'Inter';
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: #B6BEC4;
+                }
+                
+                // &:hover .review__text {
+                //     width: 500px;
+                //     opacity: 1;
+                //     height: fit-content;
+                //     padding: var(--padding-value);
+                // }
+            }
+
+            &:hover .wrapper .review__text {
+                width: 500px;
+                opacity: 1;
+                height: fit-content;
+                padding: var(--padding-value);
+            }
         }
     }
 }
