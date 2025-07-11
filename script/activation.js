@@ -27,6 +27,31 @@ document.addEventListener("DOMContentLoaded", () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(updateHeroHeight, 100);
     });
+
+    const carousel = document.querySelector(".carousel");
+
+    // Дублируем содержимое один раз
+    const originalItems = Array.from(carousel.children);
+    originalItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        carousel.appendChild(clone);
+    });
+
+    let scrollSpeed = 1; // скорость в пикселях
+    let animationFrameId;
+
+    function autoScroll() {
+        carousel.scrollLeft += scrollSpeed;
+
+        // Если достигли середины (конец оригинального контента), обнуляем
+        if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+            carousel.scrollLeft = 0;
+        }
+
+        animationFrameId = requestAnimationFrame(autoScroll);
+    }
+
+    autoScroll();
 });
 
 
